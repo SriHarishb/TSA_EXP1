@@ -1,5 +1,7 @@
 # Ex.No: 01A PLOT A TIME SERIES DATA
-###  Date: 
+###  Date: 19/08/2025
+### Register No: 212223230025
+### Name: ASHWINA K N
 
 # AIM:
 To Develop a python program to Plot a time series data (population/ market price of a commodity
@@ -11,6 +13,37 @@ To Develop a python program to Plot a time series data (population/ market price
 4. Plot the data according to need and can be altered monthly, or yearly.
 5. Display the graph.
 # PROGRAM:
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the CSV file
+file_path = 'Gold Price Prediction.csv'  # Replace with your file path
+data = pd.read_csv(file_path)
+
+# Convert 'Date' column to datetime format
+data['Date'] = pd.to_datetime(data['Date'])
+
+# Set 'Date' as the index
+data.set_index('Date', inplace=True)
+
+# Plot the time series of 'Price Today'
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data['Price Today'], label='Gold Price Today', color='blue')
+
+# Customize the plot
+plt.title('Gold Price Today Over Time')
+plt.xlabel('Date')
+plt.ylabel('Gold Price')
+plt.grid(True)
+plt.legend()
+
+# Display the plot
+plt.show()
+
+
+
+```
 
 
 
@@ -23,6 +56,9 @@ To Develop a python program to Plot a time series data (population/ market price
 
 
 # OUTPUT:
+<img width="993" height="539" alt="image" src="https://github.com/user-attachments/assets/528e29ea-79e9-4578-9351-0e32fecab2b8" />
+# RESULT
+Thus we have created the Python code for plotting the time series of given data.
 
 
 
